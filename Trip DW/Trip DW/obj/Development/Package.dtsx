@@ -1,0 +1,1209 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2026 1:48:17 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ENG-DOHA"
+  DTS:CreatorName="ENG-DOHA\Hp"
+  DTS:DTSID="{D4AE4C7F-2F47-4BA6-8556-08C3A85AE110}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{7E06321D-780A-4CEA-B8DE-3F3A026E1F57}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ENG-DOHA.Dw]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{08CC85A5-F0BB-453F-ABEA-F1CAB53A45BD}"
+      DTS:ObjectName="ENG-DOHA.Dw">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ENG-DOHA;Initial Catalog=Dw;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{08CC85A5-F0BB-453F-ABEA-F1CAB53A45BD}ENG-DOHA.Dw;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ENG-DOHA.Dw 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{75C50DF7-6829-4F09-ADEE-8013B7445A85}"
+      DTS:ObjectName="ENG-DOHA.Dw 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ENG-DOHA;Initial Catalog=Dw;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{75C50DF7-6829-4F09-ADEE-8013B7445A85}ENG-DOHA.Dw 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ENG-DOHA.NYC_Taxi_STG]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{44EB2B99-8A9C-4CF5-9F7E-95F8913B0508}"
+      DTS:ObjectName="ENG-DOHA.NYC_Taxi_STG">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ENG-DOHA;Initial Catalog=NYC_Taxi_STG;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{44EB2B99-8A9C-4CF5-9F7E-95F8913B0508}ENG-DOHA.NYC_Taxi_STG;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6132C708-DBA3-470C-909C-B985C09588C3}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Hp\OneDrive\Desktop\study\DW\Trip DW\NYC.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{659313CE-BD26-4113-B4AC-3359058C6364}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="vendor_id"
+              DTS:DTSID="{369482DF-4F25-4A92-95F1-442146D0BC81}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pickup_datetime"
+              DTS:DTSID="{59AA9A92-061A-413F-BC81-18E2472DDBB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dropoff_datetime"
+              DTS:DTSID="{2E433961-29D7-4496-96A8-01BA88357241}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="passenger_count"
+              DTS:DTSID="{8C1D5805-B60C-4B4B-9C5F-BE534F4AC887}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pickup_longitude"
+              DTS:DTSID="{4C0348CA-D732-40FD-8998-4CEE9D6DB3B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pickup_latitude"
+              DTS:DTSID="{B3F3F1CB-2BF1-48EA-A60D-D3ACD1B3AC10}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dropoff_longitude"
+              DTS:DTSID="{A6DE7BD4-FB59-477D-BD1F-DC8DEAFD54C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dropoff_latitude"
+              DTS:DTSID="{8F93E3B0-6165-468B-9CA9-A34B63B6ABA2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="store_and_fwd_flag"
+              DTS:DTSID="{3A95CC9E-D1C6-4F76-88FD-6CFD0EC98BD6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="trip_duration"
+              DTS:DTSID="{81204157-D272-4285-BCA1-05311B3D7C05}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load CSV to STG"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CF80D83E-2F28-4ACF-9CFD-66F1B7BD11A2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load CSV to STG"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load CSV to STG\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load CSV to STG\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Conditional Split.Inputs[Conditional Split Input].Columns[passenger_count_conv]"
+                      cachedDataType="i4"
+                      cachedName="passenger_count_conv"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[passenger_count_conv]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Conditional Split.Inputs[Conditional Split Input].Columns[trip_duration_conv]"
+                      cachedDataType="i4"
+                      cachedName="trip_duration_conv"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[trip_duration_conv]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Conditional Split.Inputs[Conditional Split Input].Columns[pickup_latitude_conv]"
+                      cachedDataType="r4"
+                      cachedName="pickup_latitude_conv"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[pickup_latitude_conv]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Conditional Split.Inputs[Conditional Split Input].Columns[pickup_longitude_conv]"
+                      cachedDataType="r4"
+                      cachedName="pickup_longitude_conv"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[pickup_longitude_conv]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Conditional Split.Inputs[Conditional Split Input].Columns[dropoff_longitude_conv]"
+                      cachedDataType="r4"
+                      cachedName="dropoff_longitude_conv"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[dropoff_longitude_conv]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Conditional Split.Inputs[Conditional Split Input].Columns[dropoff_latitude_conv]"
+                      cachedDataType="r4"
+                      cachedName="dropoff_latitude_conv"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[dropoff_latitude_conv]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load CSV to STG\Conditional Split.Outputs[CleanRows]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="CleanRows"
+                  synchronousInputId="Package\Load CSV to STG\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[passenger_count_conv]} &gt;= 1 &amp;&amp; #{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[passenger_count_conv]} &lt;= 6 &amp;&amp; #{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[trip_duration_conv]} &gt;= 60 &amp;&amp; #{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[trip_duration_conv]} &lt;= 86400 &amp;&amp; #{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[pickup_latitude_conv]} &gt;= 40.4 &amp;&amp; #{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[pickup_latitude_conv]} &lt;= 40.95 &amp;&amp; #{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[pickup_longitude_conv]} &gt;= -74.3 &amp;&amp; #{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[pickup_longitude_conv]} &lt;= -73.6 &amp;&amp; #{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[dropoff_latitude_conv]} &gt;= 40.4 &amp;&amp; #{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[dropoff_latitude_conv]} &lt;= 40.95 &amp;&amp; #{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[dropoff_longitude_conv]} &gt;= -74.3 &amp;&amp; #{Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[dropoff_longitude_conv]} &lt;= -73.6</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">passenger_count_conv &gt;= 1 &amp;&amp; passenger_count_conv &lt;= 6 &amp;&amp; trip_duration_conv &gt;= 60 &amp;&amp; trip_duration_conv &lt;= 86400 &amp;&amp; pickup_latitude_conv &gt;= 40.4 &amp;&amp; pickup_latitude_conv &lt;= 40.95 &amp;&amp; pickup_longitude_conv &gt;= -74.3 &amp;&amp; pickup_longitude_conv &lt;= -73.6 &amp;&amp; dropoff_latitude_conv &gt;= 40.4 &amp;&amp; dropoff_latitude_conv &lt;= 40.95 &amp;&amp; dropoff_longitude_conv &gt;= -74.3 &amp;&amp; dropoff_longitude_conv &lt;= -73.6</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load CSV to STG\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Load CSV to STG\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load CSV to STG\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Load CSV to STG\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV to STG\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV to STG\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load CSV to STG\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load CSV to STG\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Inputs[Data Conversion Input].Columns[passenger_count]"
+                      cachedDataType="i4"
+                      cachedName="passenger_count"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[passenger_count]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Inputs[Data Conversion Input].Columns[trip_duration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="trip_duration"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[trip_duration]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Inputs[Data Conversion Input].Columns[pickup_latitude]"
+                      cachedDataType="r8"
+                      cachedName="pickup_latitude"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_latitude]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Inputs[Data Conversion Input].Columns[pickup_longitude]"
+                      cachedDataType="r8"
+                      cachedName="pickup_longitude"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_longitude]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Inputs[Data Conversion Input].Columns[dropoff_longitude]"
+                      cachedDataType="r8"
+                      cachedName="dropoff_longitude"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_longitude]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Inputs[Data Conversion Input].Columns[dropoff_latitude]"
+                      cachedDataType="r8"
+                      cachedName="dropoff_latitude"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_latitude]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load CSV to STG\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[passenger_count_conv]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[passenger_count_conv]"
+                      name="passenger_count_conv"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[passenger_count]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[trip_duration_conv]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[trip_duration_conv]"
+                      name="trip_duration_conv"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[trip_duration]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[pickup_latitude_conv]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[pickup_latitude_conv]"
+                      name="pickup_latitude_conv"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_latitude]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[pickup_longitude_conv]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[pickup_longitude_conv]"
+                      name="pickup_longitude_conv"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_longitude]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[dropoff_longitude_conv]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[dropoff_longitude_conv]"
+                      name="dropoff_longitude_conv"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_longitude]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[dropoff_latitude_conv]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output].Columns[dropoff_latitude_conv]"
+                      name="dropoff_latitude_conv"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_latitude]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load CSV to STG\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load CSV to STG\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load CSV to STG\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[vendor_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[vendor_id]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[vendor_id]"
+                      name="vendor_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_datetime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[pickup_datetime]"
+                      length="50"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_datetime]"
+                      name="pickup_datetime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_datetime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dropoff_datetime]"
+                      length="50"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_datetime]"
+                      name="dropoff_datetime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[passenger_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[passenger_count]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[passenger_count]"
+                      name="passenger_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_longitude]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[pickup_longitude]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_longitude]"
+                      name="pickup_longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_latitude]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[pickup_latitude]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_latitude]"
+                      name="pickup_latitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_longitude]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dropoff_longitude]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_longitude]"
+                      name="dropoff_longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_latitude]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dropoff_latitude]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_latitude]"
+                      name="dropoff_latitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[store_and_fwd_flag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[store_and_fwd_flag]"
+                      length="50"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[store_and_fwd_flag]"
+                      name="store_and_fwd_flag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[trip_duration]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[trip_duration]"
+                      length="50"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[trip_duration]"
+                      name="trip_duration"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[vendor_id]"
+                      dataType="i4"
+                      name="vendor_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[pickup_datetime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pickup_datetime" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dropoff_datetime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="dropoff_datetime" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[passenger_count]"
+                      dataType="i4"
+                      name="passenger_count" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[pickup_longitude]"
+                      dataType="r8"
+                      name="pickup_longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[pickup_latitude]"
+                      dataType="r8"
+                      name="pickup_latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dropoff_longitude]"
+                      dataType="r8"
+                      name="dropoff_longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dropoff_latitude]"
+                      dataType="r8"
+                      name="dropoff_latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[store_and_fwd_flag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="store_and_fwd_flag" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[trip_duration]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="trip_duration" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load CSV to STG\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stg_trips]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load CSV to STG\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ENG-DOHA.NYC_Taxi_STG]"
+                  connectionManagerRefId="Package.ConnectionManagers[ENG-DOHA.NYC_Taxi_STG]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vendor_id]"
+                      cachedDataType="i4"
+                      cachedName="vendor_id"
+                      externalMetadataColumnId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vendor_id]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[vendor_id]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dropoff_longitude]"
+                      cachedDataType="r8"
+                      cachedName="dropoff_longitude"
+                      externalMetadataColumnId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dropoff_longitude]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_longitude]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dropoff_latitude]"
+                      cachedDataType="r8"
+                      cachedName="dropoff_latitude"
+                      externalMetadataColumnId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dropoff_latitude]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_latitude]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[trip_duration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="trip_duration"
+                      externalMetadataColumnId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[trip_duration]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[trip_duration]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[pickup_latitude]"
+                      cachedDataType="r8"
+                      cachedName="pickup_latitude"
+                      externalMetadataColumnId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pickup_latitude]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_latitude]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[passenger_count]"
+                      cachedDataType="i4"
+                      cachedName="passenger_count"
+                      externalMetadataColumnId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[passenger_count]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[passenger_count]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[pickup_longitude]"
+                      cachedDataType="r8"
+                      cachedName="pickup_longitude"
+                      externalMetadataColumnId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pickup_longitude]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_longitude]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[pickup_datetime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pickup_datetime"
+                      externalMetadataColumnId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pickup_datetime]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[pickup_datetime]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dropoff_datetime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="dropoff_datetime"
+                      externalMetadataColumnId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dropoff_datetime]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[dropoff_datetime]" />
+                    <inputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output].Columns[id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vendor_id]"
+                      dataType="i4"
+                      name="vendor_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pickup_datetime]"
+                      dataType="dbTimeStamp"
+                      name="pickup_datetime" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dropoff_datetime]"
+                      dataType="dbTimeStamp"
+                      name="dropoff_datetime" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[passenger_count]"
+                      dataType="i4"
+                      name="passenger_count" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pickup_longitude]"
+                      dataType="r8"
+                      name="pickup_longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pickup_latitude]"
+                      dataType="r8"
+                      name="pickup_latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dropoff_longitude]"
+                      dataType="r8"
+                      name="dropoff_longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dropoff_latitude]"
+                      dataType="r8"
+                      name="dropoff_latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[trip_duration]"
+                      dataType="i4"
+                      name="trip_duration" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[store_and_fwd_flag]"
+                      dataType="wstr"
+                      length="1"
+                      name="store_and_fwd_flag" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load CSV to STG\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV to STG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV to STG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV to STG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load CSV to STG.Paths[Conditional Split Default Output]"
+              endId="Package\Load CSV to STG\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Conditional Split Default Output"
+              startId="Package\Load CSV to STG\Conditional Split.Outputs[Conditional Split Default Output]" />
+            <path
+              refId="Package\Load CSV to STG.Paths[Data Conversion Output]"
+              endId="Package\Load CSV to STG\Conditional Split.Inputs[Conditional Split Input]"
+              name="Data Conversion Output"
+              startId="Package\Load CSV to STG\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load CSV to STG.Paths[Flat File Source Output]"
+              endId="Package\Load CSV to STG\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Load CSV to STG\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\Load CSV to STG"
+          TopLeft="64.9999970942737,37.699998202324" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load CSV to STG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Load CSV to STG\Flat File Source"
+          TopLeft="89.3749960046263,5.19999975204469" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Load CSV to STG\OLE DB Destination"
+          TopLeft="79.3749964516611,259.349990112782" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Load CSV to STG\Conditional Split"
+          TopLeft="83.124996284023,170.299991879464" />
+        <EdgeLayout
+          Id="Package\Load CSV to STG.Paths[Conditional Split Default Output]"
+          TopLeft="163.249996367842,212.96665854613">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.3833315666513"
+              Start="0,0"
+              End="0,38.8833315666513">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.8833315666513" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Load CSV to STG\Data Conversion"
+          TopLeft="87.4999960884454,82.683329644998" />
+        <EdgeLayout
+          Id="Package\Load CSV to STG.Paths[Flat File Source Output]"
+          TopLeft="165.770829379869,47.8666664187114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.8166632262867"
+              Start="0,0"
+              End="0,27.3166632262867">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.3166632262867" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load CSV to STG.Paths[Data Conversion Output]"
+          TopLeft="163.645829519568,125.349996311665">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.9499955677988"
+              Start="0,0"
+              End="0,37.4499955677988">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.4499955677988" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load CSV to STG\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
