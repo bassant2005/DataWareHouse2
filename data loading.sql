@@ -66,6 +66,21 @@ CREATE TABLE Fact_Trip (
     passenger_count INT
 );
 
+
+
+
+--- Hourly demand fact table 
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Fact_HourlyDemand')
+BEGIN
+    CREATE TABLE Fact_HourlyDemand (
+        HourlyDemandKey INT IDENTITY(1,1) PRIMARY KEY,
+        DateKey INT,
+        TimeKey INT,
+        trip_count INT,
+        avg_duration_sec FLOAT,
+        total_passengers INT
+    );
+END
 -------------------------------------------------------------
 -------------------------------------------------------------
 
@@ -98,3 +113,6 @@ SELECT COUNT(*) FROM dbo.stg_trips;
 
 -------------------------------------------------------------
 -------------------------------------------------------------
+
+
+
