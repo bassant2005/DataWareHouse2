@@ -67,20 +67,23 @@ CREATE TABLE Fact_Trip (
 );
 
 
+CREATE TABLE Fact_VendorPerformance (
+    vendor_key        INT,
+    date_key          INT,
+    total_trips       INT,
+    avg_trip_duration_sec FLOAT,
+    avg_passenger_count   FLOAT
+);
 
+CREATE TABLE Fact_HourlyDemand (
+    HourlyDemandKey INT IDENTITY(1,1) PRIMARY KEY,
+    DateKey INT,
+    TimeKey INT,
+    trip_count INT,
+    avg_duration_sec FLOAT,
+    total_passengers INT
+);
 
---- Hourly demand fact table 
-IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Fact_HourlyDemand')
-BEGIN
-    CREATE TABLE Fact_HourlyDemand (
-        HourlyDemandKey INT IDENTITY(1,1) PRIMARY KEY,
-        DateKey INT,
-        TimeKey INT,
-        trip_count INT,
-        avg_duration_sec FLOAT,
-        total_passengers INT
-    );
-END
 -------------------------------------------------------------
 -------------------------------------------------------------
 
