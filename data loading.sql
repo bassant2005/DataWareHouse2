@@ -1,7 +1,6 @@
 create database NYC_Taxi_DWH;
 USE NYC_Taxi_DWH;
 
--- Dim_Date
 CREATE TABLE Dim_Date (
     DateKey INT IDENTITY(1,1) PRIMARY KEY,
     FullDate DATE,
@@ -22,14 +21,12 @@ CREATE TABLE Dim_Time (
     TimePeriod NVARCHAR(20)
 );
 
--- Dim_Vendor
 CREATE TABLE Dim_Vendor (
     VendorKey INT IDENTITY(1,1) PRIMARY KEY,
     VendorID INT,
     VendorName VARCHAR(50)
 );
 
--- Dim_Location
 CREATE TABLE Dim_Location (
     LocationKey INT IDENTITY(1,1) PRIMARY KEY,
     Longitude FLOAT,
@@ -38,45 +35,39 @@ CREATE TABLE Dim_Location (
     ZoneLabel VARCHAR(50)
 );
 
--- Dim_Passenger
 CREATE TABLE Dim_Passenger (
     PassengerKey INT IDENTITY(1,1) PRIMARY KEY,
     PassengerCount INT,
     PassengerGroup VARCHAR(20)
 );
 
--- Dim_TripType
-    CREATE TABLE Dim_TripType (
-        TripTypeKey INT IDENTITY(1,1) PRIMARY KEY,
-        TripTypeID INT NOT NULL,
-        TripTypeName VARCHAR(50),
-        CreatedDate DATETIME DEFAULT GETDATE()
-    );
+CREATE TABLE Dim_TripType (
+    TripTypeKey INT IDENTITY(1,1) PRIMARY KEY,
+    TripTypeID INT NOT NULL,
+    TripTypeName VARCHAR(50),
+    CreatedDate DATETIME DEFAULT GETDATE()
+);
+-------------------------------------------------------------
+-------------------------------------------------------------
 
-select * from Dim_Date
-select * from Dim_Time
-select * from Dim_Vendor
-select * from Dim_Location
-select * from Dim_Passenger
-select * from Dim_TripType
+CREATE TABLE Fact_Trip (
+    trip_key INT IDENTITY(1,1) PRIMARY KEY,
+    -- Dimension Keys (Foreign Keys)
+    date_key INT,
+    time_key INT,
+    vendor_key INT,
+    pickup_location_key INT,
+    dropoff_location_key INT,
+    passenger_key INT,
+    trip_type_key INT,
+    -- Measures
+    trip_duration_sec INT,
+    trip_distance_km FLOAT,
+    passenger_count INT
+);
 
-
-USE NYC_Taxi_STG;
-SELECT COUNT(*) FROM dbo.stg_trips;
-
-USE NYC_Taxi_DWH;
-SELECT COUNT(*) FROM Dim_Date;
-
-USE NYC_Taxi_DWH;
-SELECT COUNT(*) FROM Dim_Time;
-
-USE NYC_Taxi_DWH;
-SELECT COUNT(*) FROM Dim_Location;
-
-
--------------------------------------------------------------------
-create database NYC_Taxi_STG;
-USE NYC_Taxi_STG;
+-------------------------------------------------------------
+-------------------------------------------------------------
 
 CREATE TABLE stg_trips (
     id NVARCHAR(50),              
@@ -92,5 +83,18 @@ CREATE TABLE stg_trips (
     trip_duration INT
 );
 
+-------------------------------------------------------------
+-------------------------------------------------------------
+
+select * from Dim_Date
+select * from Dim_Time
+select * from Dim_Vendor
+select * from Dim_Location
+select * from Dim_Passenger
+select * from Dim_TripType
+select * from Fact_Trip
 
 SELECT COUNT(*) FROM dbo.stg_trips;
+
+-------------------------------------------------------------
+-------------------------------------------------------------
